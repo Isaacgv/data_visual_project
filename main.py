@@ -20,8 +20,9 @@ colors = {
 # assume you have a "long-form" data frame
 # see https://plotly.com/python/px-arguments/ for more options
 
-df = pd.read_csv("./data/train.csv")
-
+url = 'https://github.com/Isaacgv/data_visual_project/blob/main/data/train.csv?raw=true'
+df = pd.read_csv(url, index_col=0)
+print(df.columns)
 df['date'] = pd.to_datetime(df['match_date'], errors='coerce')
 df["year"] = df["date"].dt.year
 df["month"] = df["date"].dt.month

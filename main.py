@@ -22,7 +22,7 @@ colors = {
 
 url = 'https://github.com/Isaacgv/data_visual_project/blob/main/data/train.csv?raw=true'
 df = pd.read_csv(url)
-print(df.columns)
+
 df['date'] = pd.to_datetime(df['match_date'], errors='coerce')
 df["year"] = df["date"].dt.year
 df["month"] = df["date"].dt.month
